@@ -43,7 +43,21 @@ const info = [
     },
   ];
 //Вызовите метод forEach у массива.
-info.forEach()
+const infoList =document.querySelector('.section__template');
+const template = document.querySelector('.content__template');
+const createElement = (obj) => {
+  const newTemplate = template.content.cloneNode(true);
+  newTemplate.querySelector('.content__template_title').textContent = obj.name;
+  newTemplate.querySelector('.content__template_info-career').textContent = obj.career;
+  newTemplate.querySelector('.content__template_info-more').textContent = 'подробнее';
+  newTemplate.querySelector('.content__template_info-more').href = obj.films;
+  infoList.append(newTemplate);
+}
+
+info.forEach((item) => {
+  createElement(item);
+});
+
 //В функцию обработчик добавьте код, который относится к работе с DOM
 //В найденные элементы на странице добавьте информацию из каждого элемента массива.
 
