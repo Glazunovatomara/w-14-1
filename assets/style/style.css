@@ -28,6 +28,7 @@
     gap: 10px;
 }
 .content__template_div {
+    position: relative;
     padding: 10px;
     cursor: pointer;
 }
@@ -38,7 +39,7 @@
 }
 .content__template_div:hover>.content__template_info {
     color: #f0f8ff;
-    transition: 0.5s;
+    transition: 0.3s;
 }
 .content__template_title {
     color: #332480;
@@ -53,7 +54,13 @@
 }
 .content__template_info-more:hover {
     color: #5f51f4;
+    text-decoration: underline;
     transition: 0.5s;
+}
+.content__template_info-more::after {
+    content: ' ';
+    position: absolute;
+    inset: 0;
 }
 .top_film {
     text-align: center;
